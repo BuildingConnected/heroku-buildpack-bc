@@ -29,11 +29,16 @@ ENV_DIR=$3
 # Create the cache dir if it doesn't exist
 mkdir -p $CACHE_DIR
 
-# Install zip
-echo "-----> Installing zip..."
+# Download zip from Dropbox
+echo "-----> Downloading zip..."
 curl --location https://www.dropbox.com/s/zg3h7bbf21uw0ec/zip-binary.tar.gz | tar xz
-mkdir -p $BUILD_DIR/vendor
-mv zip $BUILD_DIR/vendor/zip
 
-#curl http://ftp.osuosl.org/pub/ubuntu/pool/main/z/zip/zip_3.0-7_amd64.deb > $CACHE_DIR/zip_3.0-7_amd64.deb
-#dpkg -i $CACHE_DIR/zip_3.0-7_amd64.deb
+# Move zip into ./vendor and make them executable
+echo "-----> Installing zip..."
+mkdir -p $BUILD_DIR/vendor
+mkdir -p $BUILD_DIR/vendor/zip
+mkdir -p $BUILD_DIR/vendor/zip/bin
+mv zip $BUILD_DIR/vendor/zip/bin
+chmod +x $BUILD_DIR/vendor/zip/bin/*
+PATH=$PATH:$BUILD_DIR/vendor/zip/bin
+
