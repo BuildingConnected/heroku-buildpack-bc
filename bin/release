@@ -17,6 +17,5 @@
 #    This script will only be run if present.
 
 cat << EOF
-addons: []
-default_process_types: {}
+---
 EOF

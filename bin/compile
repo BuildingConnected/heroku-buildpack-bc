@@ -31,14 +31,19 @@ mkdir -p $CACHE_DIR
 
 # Download zip from Dropbox
 echo "-----> Downloading zip..."
-curl --location https://www.dropbox.com/s/zg3h7bbf21uw0ec/zip-binary.tar.gz | tar xz
+curl - L http://downloads.sourceforge.net/project/infozip/Zip%203.x%20%28latest%29/3.0/zip30.tar.gz\?r\=http%3A%2F%2Fsourceforge.net%2Fprojects%2Finfozip%2Ffiles%2FZip%25203.x%2520%2528latest%2529%2F3.0%2F\&ts\=1398377764\&use_mirror\=hivelocity | tar xz
+#curl --location https://www.dropbox.com/s/zg3h7bbf21uw0ec/zip-binary.tar.gz | tar xz
+
+
 
 # Move zip into ./vendor and make them executable
 echo "-----> Installing zip..."
 mkdir -p $BUILD_DIR/vendor
 mkdir -p $BUILD_DIR/vendor/zip
-mkdir -p $BUILD_DIR/vendor/zip/bin
-mv zip $BUILD_DIR/vendor/zip/bin
-chmod +x $BUILD_DIR/vendor/zip/bin/*
-PATH=$PATH:$BUILD_DIR/vendor/zip/bin
+#mkdir -p $BUILD_DIR/vendor/zip/bin
+mv zip30 $BUILD_DIR/vendor/zip
+make -f unix/Makefile generic
+
+#chmod +x $BUILD_DIR/vendor/zip/bin/*
+#PATH=$PATH:$BUILD_DIR/vendor/zip/bin
 
