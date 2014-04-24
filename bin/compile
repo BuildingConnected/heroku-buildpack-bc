@@ -42,7 +42,7 @@ mkdir -p $BUILD_DIR/vendor
 mkdir -p $BUILD_DIR/vendor/zip
 #mkdir -p $BUILD_DIR/vendor/zip/bin
 mv zip30 $BUILD_DIR/vendor/zip
-make -f unix/Makefile generic
+$BUILD_DIR/vendor/zip/make -f unix/Makefile generic
 
 #chmod +x $BUILD_DIR/vendor/zip/bin/*
 #PATH=$PATH:$BUILD_DIR/vendor/zip/bin
