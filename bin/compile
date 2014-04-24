@@ -31,5 +31,9 @@ mkdir -p $CACHE_DIR
 
 # Install zip
 echo "-----> Installing zip..."
-curl http://ftp.osuosl.org/pub/ubuntu/pool/main/z/zip/zip_3.0-7_amd64.deb > $CACHE_DIR/zip_3.0-7_amd64.deb
-dpkg -i $CACHE_DIR/zip_3.0-7_amd64.deb
+curl --location https://www.dropbox.com/s/zg3h7bbf21uw0ec/zip-binary.tar.gz | tar xz
+mkdir -p $BUILD_DIR/vendor
+mv zip $BUILD_DIR/vendor/zip
+
+#curl http://ftp.osuosl.org/pub/ubuntu/pool/main/z/zip/zip_3.0-7_amd64.deb > $CACHE_DIR/zip_3.0-7_amd64.deb
+#dpkg -i $CACHE_DIR/zip_3.0-7_amd64.deb
