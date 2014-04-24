@@ -21,13 +21,15 @@
 #    This script performs the buildpack transformation.
 #    All output received on `stdout` will be displayed to the user.
 
+# Parse args
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
 
-#  Install compress to create *.zip files from tar
-echo "-----> Installing compress..."
-apt-get install compress
+# Create the cache dir if it doesn't exist
+mkdir -p $CACHE_DIR
 
-
-# Install zip as a backup if *.zip files from tar are not compatible with Windows
+# Install zip
 echo "-----> Installing zip..."
-apt-get install zip
-
+curl http://ftp.osuosl.org/pub/ubuntu/pool/main/z/zip/zip_3.0-7_amd64.deb > $CACHE_DIR/zip_3.0-7_amd64.deb
+dpkg -i $CACHE_DIR/zip_3.0-7_amd64.deb
