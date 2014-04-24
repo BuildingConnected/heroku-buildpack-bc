@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Note(s):
+#   This script takes `BUILD_DIR` as a single argument, and it should return an
+#   exit code of `0` if the app present at `BUILD_DIR` can be sericed by this
+#   buildpack.  If the exit code is `0`, then the script should print a human-
+#   readable framework name to `stdout`.
+
+echo "BuildingConnected-Ops"
+exit 0

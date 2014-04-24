@@ -1,0 +1,33 @@
+#!/bin/sh
+
+#  Usage:
+#  -------
+#    bin/compile BUILD_DIR CACHE_DIR ENV_DIR
+#
+#      -  `BUILD_DIR` will be the location of the app
+#
+#      -  `CACHE_DIR` will be the locaiton the buildpack can use to cache build
+#         artifacts between builds
+#
+#      -  `ENV_DIR` is a directory that contains a file for each of the app's
+#         configuration variables
+#
+#  Link(s):
+#  -------
+#   https://devcenter.heroku.com/articles/buildpack-api
+#
+#  Note(s):
+#  -------
+#    This script performs the buildpack transformation.
+#    All output received on `stdout` will be displayed to the user.
+
+
+#  Install compress to create *.zip files from tar
+echo "-----> Installing compress..."
+apt-get install compress
+
+
+# Install zip as a backup if *.zip files from tar are not compatible with Windows
+echo "-----> Installing zip..."
+apt-get install zip
+

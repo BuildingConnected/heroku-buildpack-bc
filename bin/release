@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#  Usage:
+#  ------
+#    bin/release BUILD_DIR
+#
+#  Link(s):
+#  ------
+#    (https://devcenter.heroku.com/articles/buildpack-api)
+#
+#  Note(s):
+#  ------
+#    This script returns a YAML formatted hash with two keys: (i) `addons`, a
+#    list of default addons to install and (ii) `default_proces_types`, a hash of
+#    default `Procfile` entries.
+#
+#    This script will only be run if present.
+
+addons: []
+default_proces_types: {}
+EOF
+
