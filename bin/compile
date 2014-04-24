@@ -38,11 +38,12 @@ curl -L http://downloads.sourceforge.net/project/infozip/Zip%203.x%20%28latest%2
 
 # Move zip into ./vendor and make them executable
 echo "-----> Installing zip..."
-mkdir -p $BUILD_DIR/vendor
-mkdir -p $BUILD_DIR/vendor/zip
+#mkdir -p $BUILD_DIR/vendor
+#mkdir -p $BUILD_DIR/vendor/zip
 #mkdir -p $BUILD_DIR/vendor/zip/bin
-mv zip30 $BUILD_DIR/vendor/zip
-cd $BUILD_DIR/vendor/zip/
+#mv zip30 $BUILD_DIR/vendor/zip
+#cd $BUILD_DIR/vendor/zip/
+cd zip30
 make -f unix/Makefile generic
 
 #chmod +x $BUILD_DIR/vendor/zip/bin/*
