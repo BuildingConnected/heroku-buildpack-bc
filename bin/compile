@@ -34,9 +34,6 @@ curl -L https://www.dropbox.com/s/d6yin7l9krejkk9/zip30.tar.gz | tar xz
 echo "-----> Installing zip..."
 mkdir -p $BUILD_DIR/vendor
 mkdir -p $BUILD_DIR/vendor/zip
-#mkdir -p $BUILD_DIR/vendor/zip/bin
-#chmod +x $BUILD_DIR/vendor/zip/bin/*
-
 mkdir -p $BUILD_DIR/vendor/tmp
 mv zip30 $BUILD_DIR/vendor/tmp
 
@@ -49,5 +46,5 @@ cd ../..
 rm -rf tmp
 
 # Append to path
-echo "export PATH=\$PATH:/app/vendor/zip/bin"
+export PATH=$PATH:/app/vendor/zip/bin
 
