@@ -46,5 +46,7 @@ cd ../..
 rm -rf tmp
 
 # Append to path
-export PATH="$PATH:/app/vendor/zip/bin"
-
+#export PATH="$PATH:/app/vendor/zip/bin"
+PROFILE_PATH="$BIULD_DIR/.profile.d/zip.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="/app/vendor/zip/bin:$PATH"' >> $PROFILE_PATH
