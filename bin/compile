@@ -33,9 +33,6 @@ mkdir -p $CACHE_DIR
 echo "-----> Downloading zip..."
 curl -L https://www.dropbox.com/s/d6yin7l9krejkk9/zip30.tar.gz | tar xz
 
-# Cd into folder
-cd zip30
-
 # Move zip into ./vendor and make them executable
 echo "-----> Installing zip..."
 mkdir -p $BUILD_DIR/vendor
@@ -44,8 +41,9 @@ mkdir -p $BUILD_DIR/vendor/zip/bin
 chmod +x $BUILD_DIR/vendor/zip/bin/*
 
 # Install
+cd zip30
 make -f unix/Makefile generic
-make unix/Makefile install
+make -f unix/Makefile install
 
 # Append to path
 export PATH=$PATH:$BUILD_DIR/vendor/zip/bin
