@@ -53,8 +53,8 @@ cd $BUILD_DIR/vendor/tmp/zip30
 make -f ./unix/Makefile generic
 make -f ./unix/Makefile install
 
-cd ../..
-rm -rf tmp
+#cd ../..
+#rm -rf tmp
 
 # Append to path
 export PATH=$PATH:$BUILD_DIR/vendor/zip/bin
