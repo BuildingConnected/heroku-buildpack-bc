@@ -46,5 +46,5 @@ cd ../..
 rm -rf tmp
 
 # Append to path
-export PATH=$PATH:/app/vendor/zip/bin
+export PATH="$PATH:/app/vendor/zip/bin"
 
