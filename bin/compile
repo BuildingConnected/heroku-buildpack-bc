@@ -28,7 +28,7 @@ ENV_DIR=$3
 
 echo ""
 echo "BUILD_DIR="
-echo BUILD_DIR
+echo $BUILD_DIR
 echo ""
 
 # Create the cache dir if it doesn't exist
